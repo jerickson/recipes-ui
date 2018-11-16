@@ -10,6 +10,7 @@ export class RecipeService {
 
   recipes: Recipe[] = [
     new Recipe(
+      1,
       'Butter Chicken',
       'Indian staple',
       'https://img.taste.com.au/qDjJh8W8/taste/2016/11/butter-chicken-101831-1.jpeg',
@@ -20,6 +21,7 @@ export class RecipeService {
       ]
       ),
     new Recipe(
+      2,
       'Italian Brussel Sprouts',
       'Fusion',
       'https://static01.nyt.com/images/2018/10/24/dining/ar-brussels-sprouts-with-sausage-and-onions/merlin_145231653_8752fd70-cbfb-4d01-9dac-b70abcbfcc6d-articleLarge.jpg',
@@ -32,6 +34,10 @@ export class RecipeService {
 
   constructor(private shoppingList: ShoppingListService) {
 
+  }
+
+  find(id: number) {
+    return this.recipes.find(x => x.id == id);
   }
 
   getRecipes() {
